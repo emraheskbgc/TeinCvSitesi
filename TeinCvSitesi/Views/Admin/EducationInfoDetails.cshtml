@@ -1,0 +1,49 @@
+﻿@model IEnumerable<TeinCvSitesi.Models.EducationInfoModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <h2>Eğitim Bilgileri</h2>
+
+
+    <table class="table">
+        <tr>
+            <th>
+                Kullanıcı Adı
+            </th>
+            <th>
+                Okul Adı
+            </th>
+            <th>
+                Bölüm
+            </th>
+            <th>
+                Yıl
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SchoolName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departman)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+               
+            </tr>
+        }
+
+    </table>
+    <a href="/Admin/Index" class="btn btn-outline-dark" style="text-decoration-line:none;">Geri</a>
+</div>

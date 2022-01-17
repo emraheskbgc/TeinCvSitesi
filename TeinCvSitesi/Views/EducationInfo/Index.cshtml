@@ -1,0 +1,59 @@
+﻿@model IEnumerable<TeinCvSitesi.Models.EducationInfoModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <h2>Eğitim Bilgilerim</h2>
+
+    
+    <table class="table">
+        <tr>
+            <th>
+               Kullanıcı Adı
+            </th>
+            <th>
+               Okul Adı
+            </th>
+            <th>
+               Bölüm
+            </th>
+            <th>
+               Yıl
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <div class="row mb-3" style="text-align:center">
+
+                        <div class="col-md-1">
+                            <label class="btn btn-success">
+                                @User.Identity.Name
+                            </label>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SchoolName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departman)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id },new { @class="btn btn-outline-warning"}) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-outline-info" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-outline-danger" })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <a href="/EducationInfo/Create" class="btn btn-primary" style="text-decoration-line:none;">Ekle</a>
+</div>

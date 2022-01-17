@@ -1,0 +1,51 @@
+﻿@model TeinCvSitesi.Models.EducationInfo
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container">
+    <h2>Eğitim Detay Sayfası</h2>
+
+    <div>
+        
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Kullanıcı Adı
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+
+            <dt>
+               Okul Adı
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SchoolName)
+            </dd>
+
+            <dt>
+               Bölüm
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Departman)
+            </dd>
+
+            <dt>
+                Yıl
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Year)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id },new { @class="btn btn-outline-warning"}) |
+        <a href="/EducationInfo/Index" class="btn btn-outline-dark" style="text-decoration-line:none">Geri</a>
+    </p>
+</div>

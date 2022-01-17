@@ -1,0 +1,58 @@
+﻿@model IEnumerable<TeinCvSitesi.Models.ExperienceModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+<h2>Deneyimlerim</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+           Kullanıcı Adı
+        </th>
+        <th>
+           İş Yeri
+        </th>
+        <th>
+           Çalışma Yılı
+        </th>
+        <th>
+            Açıklama
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <div class="row mb-3" style="text-align:center">
+
+                <div class="col-md-1">
+                    <label class="btn btn-success">
+                        @User.Identity.Name
+                    </label>
+                </div>
+            </div>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkplaceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id },new { @class="btn btn-outline-warning"}) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }, new { @class = "btn btn-outline-info" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id }, new { @class = "btn btn-outline-danger" })
+        </td>
+    </tr>
+}
+
+</table>
+    <a href="/Experience/Create" class="btn btn-primary" style="text-decoration-line:none"> Yeni</a>
+    </div>

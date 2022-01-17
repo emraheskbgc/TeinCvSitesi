@@ -1,0 +1,83 @@
+﻿@model TeinCvSitesi.Models.PersonalInfo
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<div class="container">
+    <h4>Kişisel Bilgileriniz</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Kullanıcı Adı</label>
+        </dt>
+
+        <dd>
+            <div class="row mb-3" style="text-align:center">
+
+                <div class="col-md-6, btn btn-success">
+
+                    @Html.DisplayFor(model => model.UserName)
+
+                </div>
+            </div>
+
+        </dd>
+
+        <dt>
+            <label>Ad-Soyad</label>
+        </dt>
+
+        <dd>
+            <div class="row mb-3" style="text-align:center">
+
+                <div class="col-md-6">
+
+                    @Html.DisplayFor(model => model.NameSurname)
+
+                </div>
+            </div>
+
+        </dd>
+
+        <dt>
+            <label>Telefon Numarası</label>
+        </dt>
+
+        <dd>
+            <div class="row mb-3" style="text-align:center">
+
+                <div class="col-md-6">
+
+                    @Html.DisplayFor(model => model.PhoneNumber)
+
+                </div>
+            </div>
+        </dd>
+
+        <dt>
+            <label>E-Mail</label>
+        </dt>
+
+        <dd>
+            <div class="row mb-3" style="text-align:center">
+
+                <div class="col-md-6">
+
+                    @Html.DisplayFor(model => model.Email)
+
+                </div>
+            </div>
+        </dd>
+
+    </dl>
+    <p>
+
+        <a href="/Admin/Index" class="btn btn-outline-dark" style="text-decoration-line:none">Geri</a>
+
+    </p>
+    
+</div>

@@ -1,0 +1,59 @@
+﻿
+
+
+@model IEnumerable<TeinCvSitesi.Models.PersonalInfo>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <h2>Admin Kullanıcı Sayfası</h2>
+    <br /><br />
+
+   
+    <table class="table">
+        <tr>
+            <th>
+                Kullanıcı Adı
+            </th>
+            <th>
+                Ad-Soyad
+            </th>
+            <th>
+                Telefon
+            </th>
+            <th>
+                E-Mail
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <label class="btn btn-primary btn-sm">@item.UserName</label>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NameSurname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+             
+                    <a class="btn btn-outline-success" href="@Url.Action("SkillDetails", new { id=item.Id})">Becerileri</a>
+                    <a class="btn btn-outline-info" href="@Url.Action("EducationInfoDetails", new { id=item.Id})">Eğitimleri</a>
+                    <a class="btn btn-outline-success" href="@Url.Action("ExperienceDetails", new { id=item.Id})">Deneyimleri</a>
+
+
+                </td>
+            </tr>
+        }
+        
+
+    </table>
+</div>

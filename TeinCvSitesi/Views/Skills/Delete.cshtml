@@ -1,0 +1,52 @@
+﻿@model TeinCvSitesi.Models.Skill
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div class="container">
+    
+
+    <h3>Bu Kaydı Silmek İstediğinize Emin misiniz?</h3>
+    <div>
+       
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Kullanıcı Adı
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+
+            <dt>
+              Beceri 
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SkillName)
+            </dd>
+
+            <dt>
+               Derece
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Degree)
+            </dd>
+
+           
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-outline-danger" /> |
+               <a href="/Skills/Index" class="btn btn-outline-dark" style="text-decoration-line:none">Geri</a>
+            </div>
+        }
+    </div>
+</div>

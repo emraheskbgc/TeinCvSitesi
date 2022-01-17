@@ -1,0 +1,58 @@
+﻿@model TeinCvSitesi.Models.PersonalInfo
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div class="container">
+
+
+    <h3>Bu Kaydı Silmek İstediğinize Emin misiniz?</h3><br />
+    <div>
+        
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+               Kullanıcı Adı
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+
+            <dt>
+               Ad-Soyad
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NameSurname)
+            </dd>
+
+            <dt>
+               Telefon
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+
+            <dt>
+               E-Mail
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-outline-danger" /> |
+                <a href="/PersonalInfo/Index" class="btn btn-outline-dark" style="text-decoration-line:none">Geri</a>
+            </div>
+        }
+    </div>
+</div>

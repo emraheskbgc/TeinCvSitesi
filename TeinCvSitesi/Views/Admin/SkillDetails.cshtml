@@ -1,0 +1,47 @@
+﻿
+@model List<TeinCvSitesi.Models.SkillModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <h2>Beceriler</h2>
+
+
+    <table class="table">
+        <tr>
+            <th>
+                Kullanıcı Adı
+            </th>
+            <th>
+                Beceri Adı
+            </th>
+            <th>
+                Derece
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SkillName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Degree)
+                </td>
+
+               
+            </tr>
+        }
+
+    </table>
+    <p>
+        <a href="/Admin/Index" class="btn btn-outline-dark" style="text-decoration-line:none">Geri</a>
+    </p>
+</div>

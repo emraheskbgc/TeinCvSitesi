@@ -1,0 +1,77 @@
+﻿@model TeinCvSitesi.Models.Register
+@{
+    ViewBag.Title = "Register";
+
+
+}
+
+
+<div class="container">
+    <div class="row">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Home/Index">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Sign Up</li>
+            </ol>
+        </nav>
+        <div class="col-md-12">
+            <div class="img-thumbnail">
+                <br />
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "row" }))
+                {
+                    <div class="row mb-3" style="text-align:center">
+                        <label class="col-sm-2 col-form-label">Name =</label>
+                        <div class="col-sm-4">
+                            @Html.EditorFor(m => m.Name, new { htmlAttribute = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row mb-3" style="text-align:center">
+                        <label class="col-sm-2 col-form-label">Surname =</label>
+                        <div class="col-sm-4">
+                            @Html.EditorFor(m => m.SurName, new { htmlAttribute = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(m => m.SurName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row mb-3" style="text-align:center">
+                        <label class="col-sm-2 col-form-label">Email =</label>
+                        <div class="col-sm-4">
+                            @Html.EditorFor(m => m.Email, new { htmlAttribute = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row mb-3" style="text-align:center">
+                        <label class="col-sm-2 col-form-label">User Name =</label>
+                        <div class="col-sm-4">
+                            @Html.EditorFor(m => m.UserName, new { htmlAttribute = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row mb-3" style="text-align:center">
+                        <label class="col-sm-2 col-form-label">Password =</label>
+                        <div class="col-sm-4">
+                            @Html.EditorFor(m => m.Password, new { htmlAttribute = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row mb-3" style="text-align:center">
+                        <label class="col-sm-2 col-form-label">Repeat Password =</label>
+                        <div class="col-sm-4">
+                            @Html.EditorFor(m => m.RePassword, new { htmlAttribute = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(m => m.RePassword, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row mb-3" style="text-align:center">
+                        <label class="col-sm-2 col-form-label"></label>
+                        <div class="col-sm-4">
+                            <button type="submit" class="btn btn-outline-primary col-6"><i class="bi bi-person-circle"></i>Sign Up</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
